@@ -1,5 +1,10 @@
 #include"mbed.h"
-#include "bbcar.h"
+
+//#include "bbcar.h"
+#include "iostream"
+#include "string"
+
+using std::stoi;
 
 BufferedSerial pc(USBTX,USBRX); //tx,rx
 BufferedSerial uart(D1,D0); //tx,rx
@@ -11,6 +16,8 @@ int main(){
             char recv[1];
             uart.read(recv, sizeof(recv));
             pc.write(recv, sizeof(recv));
+            int a;
+            a = stoi(recv);
       }
    }
 }

@@ -46,23 +46,34 @@ int main() {
          buf[i] = fputc(recv, devout);
       }
    RPC::call(buf, outbuf);
+   //printf("%s\r\n", outbuf);
+   //xbee.write(outbuf, sizeof(outbuf));
    }
 }
 void parkingcar(Arguments *in, Reply *out){
     char outbuf[256];
+    //char buffer[200];
     int x = in->getArg<int>();
     int y = in->getArg<int>();
     int z = in->getArg<int>();
-      car.goStraight(-80);
-      while(steps*6.5*3.14/32 < y - 3) {
-      ThisThread::sleep_for(100ms);
-      }
-      car.turn(-80, -0.3);
+    //sprintf(buffer, "x = %d, y = %d\r\n", x, y);
+    //out->putData(buffer);
+    //printf("y = %d\r\n", y);
+    //printf("z = %d\r\n", z);
+      car.goStraight(-50);
       while(steps*6.5*3.14/32 < y) {
+      //printf("encoder = %d\r\n", steps);
       ThisThread::sleep_for(100ms);
       }
-      car.goStraight(-80);
-      while(steps*6.5*3.14/32 < x + y) {
+      car.stop();
+      car.turn(-100, 0.3);
+      while(steps*6.5*3.14/32 < y + 10) {
+      //printf("encoder = %d\r\n", steps);
+      ThisThread::sleep_for(100ms);
+      }
+      car.stop();
+      car.goStraight(-50);
+      while(steps*6.5*3.14/32 < x + y + 10) {
       ThisThread::sleep_for(100ms);
       }
       car.stop();
