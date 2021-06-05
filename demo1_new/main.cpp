@@ -75,18 +75,23 @@ void parkingcar(Arguments *in, Reply *out){
 
    time1 = (dis1 / 10.0) * 1000;
    time2 = (dis2 / 10.0) * 1000;
+   
+   double factorturn;
+
+   if (z == 0) factorturn = 0.4; // west
+   else if (z == 1) factorturn = -0.1; // east
 
    car.goStraightCalib(-10);
-   ThisThread::sleep_for(time1);
+   ThisThread::sleep_for(time2);
    car.stop();
    ThisThread::sleep_for(1s);
 
-   car.goStraightCalibturn(-10, 0.3);
+   car.goStraightCalibturn(-10, factorturn);
    ThisThread::sleep_for(2s);
    car.stop();
    ThisThread::sleep_for(1s);
 
    car.goStraightCalib(-10);
-   ThisThread::sleep_for(time2);
+   ThisThread::sleep_for(time1);
    car.stop();
 }
