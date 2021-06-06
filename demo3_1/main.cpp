@@ -50,13 +50,13 @@ void detectangle() {
    //parallax_ping  ping1(pin10);
    //car.goStraight(100);
         if (a == 1) {
-                car.turn(50, -0.7);  // turn right
+                car.turn(30, -0.9);  // turn right
                 ThisThread::sleep_for(1s);
                 car.stop();
                 ThisThread::sleep_for(1s);
             }
             else if (a == 2) {
-                car.turn(50, 0.7);  // turn left
+                car.turn(30, 0.9);  // turn left
                 ThisThread::sleep_for(1s);
                 car.stop();
                 ThisThread::sleep_for(1s);
@@ -83,7 +83,7 @@ int main(){
 
    parallax_ping  ping1(pin10);
    while(1){
-      if((float)ping1>15) {
+      if((float)ping1>25) {
         led1 = 1;
         if(uart.readable()){
             char recv[1];
