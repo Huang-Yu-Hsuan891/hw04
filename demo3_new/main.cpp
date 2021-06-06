@@ -31,7 +31,7 @@ int main(){
             float a = atof(recv);
             //printf("a = %d", a);
             if (a < 180) car.turn(30, 0.8);
-            else if (a > 180) car.turn(30, -0.8);
+            else if (a > 180) car.turn(30, -0.8);  //???
             else if (a == 180) car.goStraight(40);
             else car.goStraight(20);
             //ThisThread::sleep_for(10ms);

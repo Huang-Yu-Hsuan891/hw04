@@ -80,6 +80,8 @@ void parkingcar(Arguments *in, Reply *out){
 
    if (z == 0) factorturn = 0.4; // west
    else if (z == 1) factorturn = -0.1; // east
+   car.stop();
+   ThisThread::sleep_for(2s);
 
    car.goStraightCalib(-10);
    ThisThread::sleep_for(time2);
