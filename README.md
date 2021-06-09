@@ -1,5 +1,5 @@
 # hw04
-# part1 我是放在demo1_new資料夾內，part2 是放在demo2_try資料夾內，part3 則是放在demo3_2資料夾內。
+# part1 我是放在demo1_new資料夾內，part2 是放在demo2_try資料夾內，part3 則是放在demo3_2資料夾內，其他資寮夾是嘗試做的方法但沒有很成功。
 # 以下為part1內容講解
 # 首先有一個RPC function是用來當呼叫這個RPC_FUNCTION parkingcar，分別傳入三個參數(x,y,z)，我用setCalibTable去做車子速度的調控。z=0是從西方倒車，z=1是從東方倒車。dis1 = x - 5和dis2 = y - 5
 # 是為了做轉彎的時候也會後退一定的距離，time1 = (dis1 / 10.0) * 1000和time2 = (dis2 / 10.0) * 1000是用來計算以此速度需要行走的時間。
