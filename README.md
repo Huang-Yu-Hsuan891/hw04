@@ -24,5 +24,24 @@
    ThisThread::sleep_for(time1);
    
    car.stop();
-#以上的code就是讓車子倒退，轉彎再倒退所呼叫的function和time
-# 以下為part1內容講解
+# 以上的code就是讓車子倒退，轉彎再倒退所呼叫的function和time
+
+# 以下為part1 python內容講解
+   s.write("/parkingcar/run 20 14 0 \n".encode())
+   傳一段rpc指令經由xbee給mbed
+   
+# 以下為part2內容講解
+# 首先宣告一個RPC function是用來當呼叫這個RPC_FUNCTION linedetection，如果在規定的範圍內偵測到直線，就讓car直走
+       car.goStraight(60);
+       
+       ThisThread::sleep_for(1s);
+       
+       car.stop();
+       
+       ThisThread::sleep_for(500ms);
+       
+ # 以下為part2 openmv 內容講解
+ # 我使用lab14 detection 的方式，只是在merge_distance加大讓線段別那麼多，之後就uart.write(("/linedetection/run %d %d %d %d %f\r\n" % print_args).encode()) 給mbed呼叫rpc function
+ 
+ # 以下為part3內容講解
+
